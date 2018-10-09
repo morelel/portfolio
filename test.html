@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/assets/css/test.css">
+        <title>Portfolio</title>
+    </head>
+    <body id="body">
+        <header id="header">
+            <div class="container">
+                <nav class="navbar">
+                    <ul>
+                        <li><a>parcours</a></li>
+                        <li><a>creations</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="intro-text">
+                    <h1 class="title">PORTFOLIO</h1>
+                    <hr class="star-light">
+                    <img src="src/assets/image/photo" alt="">
+                    <h2 class="name">Elodie Morel</h2>
+                    <p>20 ans</p>
+                    <span class="skills">Web developper - Designer</span>
+                    <hr class="star-night">
+                    <button onclick="appliqueNuit()">ModeNuit</button>
+                    <button onclick="appliqueJour()">ModeJour</button>
+                </div>
+            </div>
+        </header>
+        <section id="profil">
+            <h2>Présentation</h2>
+            <hr class="star-green">
+        </section>
+        <section id="carrousel">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="src/assets/image/banner1.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="src/assets/image/banner2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="src/assets/image/banner3.jpg" style="width:100%">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div style="circle">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h2>Etudes</h2>
+            <hr class="star-primary">
+            <div class="flex-container">
+                <div id="study">
+                    <h3>Bac ES</h3>
+                    <hr class="star-hidden">
+                    <p>Série ES spécialité mathématiques</p>
+                    <p>Bac avec mention</p>
+                </div>
+                <div id="study">
+                    <h3>DUT MMI</h3>
+                    <hr class="star-hidden">
+                    <p>Métiers du Multimédia et de l'Internet</p>
+                </div>
+                <div id="study">
+                    <h3>LP SMIN</h3>
+                    <hr class="star-hidden">
+                    <p>Systeme Mobil et Interface Nomade</p>
+                </div>
+            </div>
+            <h2>Expériences professionnelles</h2>
+            <hr class="star-primary">
+            <div class="flex-container">
+                <div id="experience">
+                    <h3>Stage Optimisation SEO</h3>
+                    <hr class="star-hidden">
+                    <p>UPERGY</p>
+                </div>
+                <div id="experience">
+                    <h3>Site web</h3>
+                    <hr class="star-hidden">
+                    <p>Pour un particulier</p>
+                </div>
+                <div id="experience">
+                    <h3>Projets d'étude</h3>
+                    <hr class="star-hidden">
+                    <p>Création de plusieurs site Wordpress</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Elodie Morel - 2018</p>
+        </footer>
+    </body>
+    <script>
+        var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+    </script>
+    <script>
+    function appliqueNuit() {
+	    var button = document.getElementById('body');
+	    button.style.backgroundColor = 'rgb(11, 124, 102)';
+	    var button = document.getElementById('profil');
+	    button.style.color = 'white';
+	    var button = document.getElementById('portfolio');
+	    button.style.color = 'white';
+	    var button = document.getElementById('study');
+	    button.style.backgroundColor = 'rgb (51,51,51)';
+	    var button = document.getElementById('experience');
+	    button.style.backgroundColor = 'rgb(51,51, 51)';
+    }
+
+    function appliqueJour() {
+	    var button = document.getElementById('body');
+	    button.style.backgroundColor = 'white';
+	    var button = document.getElementById('study');
+	    button.style.backgroundColor = 'white';
+	    var button = document.getElementById('experience');
+	    button.style.backgroundColor = 'white';
+    }
+    
+    </script>
+    <script type="text/javascript" src="/scripts/styleswitcher.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
