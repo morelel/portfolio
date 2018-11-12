@@ -1,44 +1,60 @@
+/*BASE*/
 body{
     font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
     overflow-x:hidden;
+    margin:0;
+    background-color: white;
+    width:100%;
 }
 
-p{
-    font-size:20px;
-}
-
-h1,h2,h3,h4,h5,h6{
-    text-transform:uppercase;
+h1,h2,h3,h4,h5,h6 {
     font-weight:700;
     text-align:center;
 }
 
-h1 {
-    color: white;
+p{
+    font-size:20px;
+    text-align:center;
 }
 
+/*NAVBAR*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    overflow:hidden;
+    background-color: #333;
+    display:flex;
+    width:100%;
+    justify-content: center;
+    flex-flow:row wrap;
+}
+
+li {
+    text-transform:uppercase;
+    font-size: 11px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color:#fff;
+    color: #333;
+}
+
+/*HEADER*/
 .name{
     color:white;
 }
 
-button{
+.title {
     color:white;
-    background-color:black;
-    font-size:16px;
-    margin: 22px auto 3px;
-}
-
-hr.star-light, hr.star-primary{
-    padding:0;
-    border:none;
-    border-top:solid 5px;
-    text-align:center;
-    max-width:250px;
-    margin:25px auto 30px;
-}
-
-hr.star-light{
-    border-color:white;
 }
 
 header{
@@ -47,30 +63,244 @@ header{
 }
 
 header .container{
-    padding-top:100px;
     padding-bottom:50px;
-    
+    margin-bottom:0;
 }
+
 header img{
     display:block;
     margin:0 auto 20px;
-    
 }
+
+.intro-text{
+    padding-top:15px;
+    color: white;
+}
+
 header .intro-text name{
     display:block;
     font-weight:700;
     font-size:2em;
-    
 }
+
 header .intro-text .skills{
     font-size:1.25em;
     font-weight:300;
     color:white;
-    
 }
 
-#portfolio .portfolio-item{
+/*TRAIT*/
+.star-light, .star-primary, .star-green, .star-hidden{
+    padding:0;
+    border:none;
+    border-top:solid 5px;
     text-align:center;
-    
+    max-width:250px;
+    margin:25px auto 30px;
 }
 
+.star-night {
+    padding:0;
+    border: none;
+    border-top:solid 2px;
+    text-align:center;
+    max-width: 150px;
+    margin:15px auto 15px;
+}
+
+.star-light {
+    border-color:white;
+}
+
+.star-primary {
+    border-color:#333;
+}
+
+/*METEO*/
+.weather {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    padding-top:20px;
+    padding-bottom:50px;
+}
+
+/*BLOC PARCOURS*/
+#study{
+    margin:5px;
+    width:30%;
+    padding:5px;
+    border:solid 2px #18BC9C;
+}
+
+#study:hover {
+    background-color:#18BC9C;
+    color: white;
+    transition:0.5s;
+}
+
+#experience{
+    margin:5px;
+    padding:5px;
+    width:30%;
+    border:solid 2px #18BC9C;
+}
+
+#experience:hover {
+    background-color:#18BC9C;
+    color: white;
+    transition:0.5s;
+}
+
+.flex-container {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    padding-top:20px;
+    padding-bottom:50px;
+}
+
+.star-hidden {
+    color: #333;
+    border-color: white;
+    border:solid 1px;
+    max-width:70px;
+}
+
+#study:hover .star-hidden {
+    max-width:200px;
+    color: white;
+    transition:0.5s;
+}
+
+#experience:hover .star-hidden {
+    max-width:200px;
+    color:white;
+    transition:0.5s;
+}
+
+/*CARROUSEL*/
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+#carrousel {
+    background-color: #333;
+    color:white;
+    padding: 10px;
+}
+
+.circle {
+    text-align:center;
+}
+
+/*CREATIONS*/
+#creations {
+    background-color:#18BC9C;
+    width:100%;
+    color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+/*CONTACT*/
+#contact.job{
+    font-size:1.25em;
+    font-weight:300;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #333;
+    color: white;
+    margin:0;
+    padding: 2px;
+}
+
+footer p {
+    font-size:1.25em;
+    font-weight:300;
+    display: flex;
+    padding-left: 50px;
+}
+
+/*mode nuit*/
+.bg1 {
+    background-color: rgb(40, 175, 148);
+}
+.bg2 {
+    background-color: rgb(12, 160, 131);
+}
+.bg3 {
+    background-color: rgb(11, 124, 102);
+}
+
+/*CREATIONS & CONTACT*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin:5px;
+    width:30%;
+    padding:5px;
+    background-color:white;
+    color: black;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
