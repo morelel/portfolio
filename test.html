@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="src/assets/css/test.css">
+        <link rel="stylesheet" href="src/assets/css/index.css">
         <title>Portfolio</title>
     </head>
     <body id="body">
@@ -11,9 +11,9 @@
             <div class="container">
                 <nav class="navbar">
                     <ul>
-                        <li><a>parcours</a></li>
-                        <li><a>creations</a></li>
-                        <li><a>Contact</a></li>
+                        <li><a href="#portfolio">parcours</a></li>
+                        <li><a href="#creations">creations</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="intro-text">
@@ -24,35 +24,26 @@
                     <p>20 ans</p>
                     <span class="skills">Web developper - Designer</span>
                     <hr class="star-night">
-                    <button onclick="appliqueNuit()">ModeNuit</button>
-                    <button onclick="appliqueJour()">ModeJour</button>
+                    <button class="mode-nuit">ModeNuit</button>
+                    <button class="mode-jour">ModeJour</button>
+                   <!-- widget meteo -->
+                   <div class="weather">
+                        <div id="widget_75732244d4277ccb924a523fa7233735">
+                            <span id="t_75732244d4277ccb924a523fa7233735">Météo Grenoble</span>
+                            <span id="l_75732244d4277ccb924a523fa7233735"><a href="http://www.mymeteo.info/r/grenoble_7">Grenoble</a></span>
+                            <script type="text/javascript">
+                                (function() {
+                                	var my = document.createElement("script"); my.type = "text/javascript"; my.async = true;
+                                   	my.src = "https://services.my-meteo.com/widget/js?ville=232&format=vertical&nb_jours=1&temps&icones&vent&c1=393939&c2=a9a9a9&c3=e6e6e6&c4=ffffff&c5=00d2ff&c6=d21515&police=0&t_icones=1&x=160&y=106.4000015258789&d=0&id=75732244d4277ccb924a523fa7233735";
+                                   	var z = document.getElementsByTagName("script")[0]; z.parentNode.insertBefore(my, z);
+                                })();
+                            </script>
+                        </div>
+                        <!-- widget meteo -->
+                    </div>
                 </div>
             </div>
         </header>
-        <section id="profil">
-            <h2>Présentation</h2>
-            <hr class="star-green">
-        </section>
-        <section id="carrousel">
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <img src="src/assets/image/banner1.jpg" style="width:100%">
-                </div>
-                <div class="mySlides fade">
-                    <img src="src/assets/image/banner2.jpg" style="width:100%">
-                </div>
-                <div class="mySlides fade">
-                    <img src="src/assets/image/banner3.jpg" style="width:100%">
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <div style="circle">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-        </section>
         <section id="portfolio">
             <h2>Etudes</h2>
             <hr class="star-primary">
@@ -94,66 +85,49 @@
                 </div>
             </div>
         </section>
-        
+        <section id="creations">
+            <h2>Mes créations</h2>
+            <hr class="star-light">
+            <p>Galerie</p>
+            <div class="flex-container">
+                <div class="card">
+                    <img src="src/assets/image/portfolio.PNG" alt="" style="width:100%">
+                    <div class="container">
+                        <h4><b>PORTFOLIO</b></h4> 
+                        <p>Portfolio personnel créé dans la cadre d'un module de développement web</p> 
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="src/assets/image/pageredirection.PNG" alt="" style="width:100%">
+                    <div class="container">
+                        <h4><b>PAGE DE REDIRECTION</b></h4> 
+                        <p>Page de redirection créé pour l'entreprise UPERGY pendant un stage</p> 
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="src/assets/image/siteanglais.PNG" alt="" style="width:100%">
+                    <div class="container">
+                        <h4><b>SITE WEB</b></h4> 
+                        <p>Site créé dans le cadre d'un module d'anglais</p> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <hr class="star-primary">
+            <p>Stage - Alternance - Emploi</p>
+            <div class="flex-container">
+                <div class="card">
+                    <h4><b>Me contacter</b></h4> 
+                    <p>email : el-morel@wanadoo.fr</p> 
+                </div>
+            </div>
+        </section>
         <footer>
-            <p>Elodie Morel - 2018</p>
+            <p class="job">Elodie Morel - 2018</p>
         </footer>
     </body>
-    <script>
-        var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-}
-    </script>
-    <script>
-    function appliqueNuit() {
-	    var button = document.getElementById('body');
-	    button.style.backgroundColor = 'rgb(11, 124, 102)';
-	    var button = document.getElementById('profil');
-	    button.style.color = 'white';
-	    var button = document.getElementById('portfolio');
-	    button.style.color = 'white';
-	    var button = document.getElementById('study');
-	    button.style.backgroundColor = 'rgb (51,51,51)';
-	    var button = document.getElementById('experience');
-	    button.style.backgroundColor = 'rgb(51,51, 51)';
-    }
-
-    function appliqueJour() {
-	    var button = document.getElementById('body');
-	    button.style.backgroundColor = 'white';
-	    var button = document.getElementById('study');
-	    button.style.backgroundColor = 'white';
-	    var button = document.getElementById('experience');
-	    button.style.backgroundColor = 'white';
-    }
-    
-    </script>
-    <script type="text/javascript" src="/scripts/styleswitcher.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="src/assets/js/index.js"></script>
 </html>
